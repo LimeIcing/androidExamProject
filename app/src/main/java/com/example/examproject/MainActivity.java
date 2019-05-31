@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private void init(){
         Log.d(TAG, "Initializing...");
 
-        button = findViewById(R.id.button);
+        button = findViewById(R.id.buttonSignIn);
         final Intent intent = new Intent(this, OverviewActivity.class);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
