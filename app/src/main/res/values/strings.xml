@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">examProject</string>
+    <string name="kea">KEA</string>
+    <string name="bank">Bank</string>
+    <string name="title_activity_overview">OverviewActivity</string>
+    <string name="accounts">Manage accounts</string>
 </resources>

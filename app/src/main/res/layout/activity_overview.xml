@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OverviewActivity">
+
+    <ScrollView
+        android:id="@+id/scrollViewOverview"
+        android:layout_width="395dp"
+        android:layout_height="715dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonManageAccounts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
+                android:text="@string/accounts"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                />
+
+            <Button
+                android:id="@+id/buttonManageAccounts3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
+                android:text="@string/accounts"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                />
+
+            <Button
+                android:id="@+id/buttonManageAccounts4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
+                android:text="@string/accounts"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                />
+
+            <Button
+                android:id="@+id/buttonManageAccounts5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
+                android:text="@string/accounts"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                />
+
+            <Button
+                android:id="@+id/buttonManageAccounts6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
+                android:text="@string/accounts"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "862376030497",
+    "firebase_url": "https://kea-bank.firebaseio.com",
+    "project_id": "kea-bank",
+    "storage_bucket": "kea-bank.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862376030497:android:3e214f0a13a2334b",
+        "android_client_info": {
+          "package_name": "com.example.examproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862376030497-h75arpd1iv8rpqe7i7rj6vdf6i9njfdm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.examproject",
+            "certificate_hash": "04138f239a86aacbe5454955654e711ad09f23fe"
+          }
+        },
+        {
+          "client_id": "862376030497-gls6m7mh5su99bhpu42rka4qkrmc8abq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgAbs5JQ6pGaBM8tX-AvRJMvblBJ_yaZ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862376030497-gls6m7mh5su99bhpu42rka4qkrmc8abq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
