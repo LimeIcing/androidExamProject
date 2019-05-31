@@ -7,29 +7,44 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final String TAG = "MainActivity";
-    private Button button;
+    private Button buttonSignIn, buttonNewUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(TAG, "onCreate() called");
+        Log.d(TAG, "onCreate: called");
         init();
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+
+        switch (v.getId()) {
+            case R.id.buttonSignIn:
+                Log.d(TAG, "onClick: sign in pressed");
+                intent = new Intent(this, OverviewActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.buttonNewUser:
+                Log.d(TAG, "onClick: new user pressed");
+                intent = new Intent(this, UserFormActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 
     private void init(){
         Log.d(TAG, "Initializing...");
 
-        button = findViewById(R.id.buttonSignIn);
-        final Intent intent = new Intent(this, OverviewActivity.class);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(intent);
-            }
-        });
+        buttonSignIn = findViewById(R.id.buttonSignIn);
+        buttonSignIn.setOnClickListener(this);
+        buttonNewUser = findViewById(R.id.buttonNewUser);
+        buttonNewUser.setOnClickListener(this);
     }
 }

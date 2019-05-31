@@ -48,11 +48,13 @@
         android:layout_marginBottom="8dp"
         android:hint="@string/username"
         android:inputType="textNoSuggestions"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/divider"
         tools:targetApi="o"
-        android:autofillHints="" />
+        android:autofillHints=""
+        />
 
     <View
         android:id="@+id/divider"
@@ -75,15 +77,16 @@
         android:layout_marginTop="8dp"
         android:hint="@string/password"
         android:inputType="textPassword"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider"
         tools:targetApi="o"
-        android:autofillHints="" />
+        android:autofillHints=""
+        />
 
     <Button
         android:id="@+id/buttonSignIn"
-        style="@android:style/Widget.Material.Light.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorPrimaryDark"
@@ -91,7 +94,7 @@
         android:text="@string/sign_in"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="@id/editTextPassword"
         app:layout_constraintStart_toStartOf="@id/editTextPassword"
@@ -100,7 +103,6 @@
 
     <Button
         android:id="@+id/buttonNewUser"
-        style="@android:style/Widget.Material.Light.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorAccent"

@@ -18,6 +18,5 @@ public class OverviewActivity extends AppCompatActivity {
 
     private void init(){
         Log.d(TAG, "Initializing...");
-
     }
 }

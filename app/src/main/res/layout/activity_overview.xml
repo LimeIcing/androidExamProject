@@ -8,12 +8,8 @@
 
     <ScrollView
         android:id="@+id/scrollViewOverview"
-        android:layout_width="395dp"
-        android:layout_height="715dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,61 +18,57 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:orientation="vertical">
 
             <Button
                 android:id="@+id/buttonManageAccounts"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="96dp"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:textColor="@color/colorWhite"
                 android:text="@string/accounts"
                 android:textAllCaps="false"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 />
 
             <Button
-                android:id="@+id/buttonManageAccounts3"
+                android:id="@+id/buttonPayBill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
+                android:text="@string/pay_bill"
+                android:textAllCaps="false"
+                />
+
+            <Button
+                android:id="@+id/buttonTransferMoney"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
+                android:text="@string/transfer_money"
+                android:textAllCaps="false"
+                />
+
+            <Button
+                android:id="@+id/buttonUserProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
+                android:text="@string/user_profile"
+                android:textAllCaps="false"
+                />
+
+            <Button
+                android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:textColor="@color/colorWhite"
                 android:text="@string/accounts"
                 android:textAllCaps="false"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                />
-
-            <Button
-                android:id="@+id/buttonManageAccounts4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:textColor="@color/colorWhite"
-                android:text="@string/accounts"
-                android:textAllCaps="false"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                />
-
-            <Button
-                android:id="@+id/buttonManageAccounts5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:textColor="@color/colorWhite"
-                android:text="@string/accounts"
-                android:textAllCaps="false"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                />
-
-            <Button
-                android:id="@+id/buttonManageAccounts6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:textColor="@color/colorWhite"
-                android:text="@string/accounts"
-                android:textAllCaps="false"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 />
 
         </LinearLayout>
