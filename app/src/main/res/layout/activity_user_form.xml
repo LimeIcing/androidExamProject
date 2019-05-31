@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:hint="@string/first_name"
-                android:inputType="textPersonName"
+                android:inputType="textCapWords"
                 android:autofillHints=""
                 android:textColor="@color/colorPrimaryDark"
                 tools:targetApi="o"
@@ -43,21 +43,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="@string/last_name"
-                android:inputType="textPersonName"
+                android:inputType="textCapWords"
                 android:autofillHints=""
                 android:textColor="@color/colorPrimaryDark"
                 tools:targetApi="o"
                 />
 
-            <EditText
-                android:id="@+id/editTextDateOfBirth"
+            <TextView
+                android:id="@+id/textViewDateOfBirth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="@string/date_of_birth"
-                android:inputType="date"
                 android:autofillHints=""
                 android:textColor="@color/colorPrimaryDark"
+                android:background="?attr/editTextBackground"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
                 tools:targetApi="o"
                 />
 
