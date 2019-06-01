@@ -69,6 +69,8 @@ public class UserFormActivity extends AppCompatActivity implements View.OnClickL
 
             case R.id.buttonSubmitApplication:
                 Log.d(TAG, "onClick: Submit pressed");
+                Toast.makeText(this, "Communicating with server...", Toast.LENGTH_LONG)
+                        .show();
 
                 saveToFirestore();
 

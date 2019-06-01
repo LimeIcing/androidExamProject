@@ -47,7 +47,7 @@
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="8dp"
         android:hint="@string/username"
-        android:inputType="textNoSuggestions"
+        android:inputType="textEmailAddress"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

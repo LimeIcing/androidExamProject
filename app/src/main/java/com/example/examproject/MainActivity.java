@@ -1,11 +1,21 @@
 package com.example.examproject;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -13,7 +23,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // region UI
     private Button buttonSignIn, buttonNewUser;
+    private EditText editTextEmail, editTextPassword;
     // endregion
+
+    Boolean isValid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,24 +38,66 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Intent intent;
-
         switch (v.getId()) {
             case R.id.buttonSignIn:
                 Log.d(TAG, "onClick: sign in pressed");
-                intent = new Intent(this, OverviewActivity.class);
-                startActivity(intent);
+
+                if (editTextEmail.getText().toString().isEmpty()) {
+                    Toast.makeText(MainActivity.this,
+                            "Please fill out the fields", Toast.LENGTH_LONG).show();
+                } else {
+                    checkUser();
+                }
+
                 break;
 
             case R.id.buttonNewUser:
                 Log.d(TAG, "onClick: new user pressed");
-                intent = new Intent(this, UserFormActivity.class);
+                Intent intent = new Intent(this, UserFormActivity.class);
                 startActivity(intent);
 
                 // fill in username in password
 
                 break;
         }
+    }
+
+    private void checkUser() {
+        Log.d(TAG, "checkUser: called");
+
+        DocumentReference documentReference = FirebaseFirestore.getInstance()
+                .document("users/" + editTextEmail.getText().toString());
+
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    if (editTextEmail.getText().toString()
+                            .equals(documentSnapshot.getString("email"))
+                            && editTextPassword.getText().toString()
+                            .equals(documentSnapshot.getString("password"))) {
+                        Log.d(TAG, "onSuccess: username and password valid");
+
+                        User currentUser = documentSnapshot.toObject(User.class);
+
+                        Intent intent = new Intent
+                                (MainActivity.this, OverviewActivity.class);
+                        intent.putExtra("user", currentUser);
+                        startActivity(intent);
+                    } else {
+                        Log.d(TAG, "onSuccess: password invalid");
+
+                        Toast.makeText(MainActivity.this,
+                                "E-mail or password incorrect", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Log.d(TAG, "onSuccess: e-mail invalid");
+
+                    Toast.makeText(MainActivity.this,
+                            "E-mail or password incorrect", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     private void init(){
@@ -52,5 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonSignIn.setOnClickListener(this);
         buttonNewUser = findViewById(R.id.buttonNewUser);
         buttonNewUser.setOnClickListener(this);
+        editTextEmail = findViewById(R.id.editTextUsername);
+        editTextPassword = findViewById(R.id.editTextPassword);
     }
 }
