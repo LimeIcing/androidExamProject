@@ -13,8 +13,10 @@ public class OverviewActivity extends AppCompatActivity implements View.OnClickL
 
     private final String TAG = "OverviewActivity";
 
+    // region UI
     private TextView textViewCurrentUser;
     private Button buttonManageAccounts, buttonPayBill, buttonTransferMoney, buttonUserProfile;
+    // endregion
 
     private User currentUser;
 

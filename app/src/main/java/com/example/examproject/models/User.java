@@ -3,8 +3,11 @@ package com.example.examproject.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.List;
+
 public class User implements Parcelable {
     private String email, firstName, lastName, dateOfBirth;
+    private List<String> accounts;
 
     public User() {
     }
@@ -14,6 +17,7 @@ public class User implements Parcelable {
         firstName = in.readString();
         lastName = in.readString();
         dateOfBirth = in.readString();
+        accounts = in.createStringArrayList();
     }
 
     @Override
@@ -22,6 +26,7 @@ public class User implements Parcelable {
         dest.writeString(firstName);
         dest.writeString(lastName);
         dest.writeString(dateOfBirth);
+        dest.writeStringList(accounts);
     }
 
     @Override
@@ -56,6 +61,10 @@ public class User implements Parcelable {
 
     public String getDateOfBirth() {
         return dateOfBirth;
+    }
+
+    public List<String> getAccounts() {
+        return accounts;
     }
     // endregion
 }

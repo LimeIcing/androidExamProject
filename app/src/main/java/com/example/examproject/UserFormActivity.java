@@ -21,6 +21,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 public class UserFormActivity extends AppCompatActivity implements View.OnClickListener {
@@ -84,14 +86,14 @@ public class UserFormActivity extends AppCompatActivity implements View.OnClickL
         Log.d(TAG, "saveToFirestore: saving...");
 
         DocumentReference documentReference;
-        String accountNumber, registrationNumber;
+        List<String> accounts = new LinkedList<>();
+        Map<String, Object> data = new HashMap<>();
         String firstName = editTextFirstName.getText().toString();
         String lastName = editTextLastName.getText().toString();
         String dateOfBirth = textViewDateOfBirth.getText().toString();
         final String email = editTextEmail.getText().toString();
         String password = editTextPassword.getText().toString();
         StringBuilder stringBuilder = new StringBuilder();
-        Map<String, Object> data = new HashMap<>();
 
         if (firstName.isEmpty() || lastName.isEmpty() || dateOfBirth.isEmpty() || email.isEmpty()
                 || password.isEmpty()) {
@@ -102,8 +104,14 @@ public class UserFormActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
-        createAccount(AccountType.DEFAULT);
-        createAccount(AccountType.BUDGET);
+        for (int i = 0; i < 28; i++) {
+            stringBuilder.append(((int)(Math.random() * 10)));
+        }
+
+        createAccount(AccountType.DEFAULT, stringBuilder.substring(0, 14));
+        createAccount(AccountType.BUDGET, stringBuilder.substring(14, 28));
+        accounts.add(email + ":" + stringBuilder.substring(4, 14));
+        accounts.add(email + ":" + stringBuilder.substring(18, 28));
 
         documentReference = FirebaseFirestore.getInstance().document("users/" + email);
         data.put("firstName", firstName);
@@ -111,6 +119,7 @@ public class UserFormActivity extends AppCompatActivity implements View.OnClickL
         data.put("dateOfBirth", dateOfBirth);
         data.put("email", email);
         data.put("password", password);
+        data.put("accounts", accounts);
 
         documentReference.set(data).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -135,19 +144,14 @@ public class UserFormActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
-    public void createAccount(final AccountType accountType) {
-        StringBuilder stringBuilder = new StringBuilder();
+    public void createAccount(final AccountType accountType, String numberString) {
         final String accountNumber, registrationNumber;
         DocumentReference documentReference;
         Map<String, Object> data = new HashMap<>();
         String email = editTextEmail.getText().toString();
 
-        for (int i = 0; i < 14; i++) {
-            stringBuilder.append(((int)(Math.random() * 10)));
-        }
-
-        accountNumber = stringBuilder.substring(4, 14);
-        registrationNumber = stringBuilder.substring(0, 4);
+        accountNumber = numberString.substring(4, 14);
+        registrationNumber = numberString.substring(0, 4);
 
         Log.d(TAG, "saveToFirestore: generated registration and account numbers for " +
                 accountType + ": " + registrationNumber + " " + accountNumber);
