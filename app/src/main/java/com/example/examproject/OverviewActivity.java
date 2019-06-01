@@ -3,13 +3,18 @@ package com.example.examproject;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class OverviewActivity extends AppCompatActivity {
+import com.example.examproject.models.User;
+
+public class OverviewActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final String TAG = "OverviewActivity";
 
     private TextView textViewCurrentUser;
+    private Button buttonManageAccounts, buttonPayBill, buttonTransferMoney, buttonUserProfile;
 
     private User currentUser;
 
@@ -21,12 +26,42 @@ public class OverviewActivity extends AppCompatActivity {
         init();
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.buttonManageAccounts:
+                Log.d(TAG, "onClick: manage accounts pressed");
+                break;
+
+            case R.id.buttonPayBill:
+                Log.d(TAG, "onClick: pay bill pressed");
+                break;
+
+            case R.id.buttonTransferMoney:
+                Log.d(TAG, "onClick: transfer money pressed");
+                break;
+
+            case R.id.buttonUserProfile:
+                Log.d(TAG, "onClick: user profile pressed");
+                break;
+        }
+    }
+
     private void init(){
         Log.d(TAG, "Initializing...");
 
         textViewCurrentUser = findViewById(R.id.textViewCurrentUser);
         currentUser = getIntent().getParcelableExtra("user");
-        textViewCurrentUser
-                .setText("Hello, " + currentUser.getFirstName() + " " + currentUser.getLastName());
+        String greeting = "Hello, " + currentUser.getFirstName() + " " + currentUser.getLastName();
+        textViewCurrentUser.setText(greeting);
+
+        buttonManageAccounts = findViewById(R.id.buttonManageAccounts);
+        buttonManageAccounts.setOnClickListener(this);
+        buttonPayBill = findViewById(R.id.buttonPayBill);
+        buttonPayBill.setOnClickListener(this);
+        buttonTransferMoney = findViewById(R.id.buttonTransferMoney);
+        buttonTransferMoney.setOnClickListener(this);
+        buttonUserProfile = findViewById(R.id.buttonUserProfile);
+        buttonUserProfile.setOnClickListener(this);
     }
 }

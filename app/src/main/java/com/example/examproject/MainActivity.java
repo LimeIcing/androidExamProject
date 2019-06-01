@@ -1,7 +1,6 @@
 package com.example.examproject;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,9 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
+import com.example.examproject.models.User;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -25,8 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonSignIn, buttonNewUser;
     private EditText editTextEmail, editTextPassword;
     // endregion
-
-    Boolean isValid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +75,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Log.d(TAG, "onSuccess: username and password valid");
 
                         User currentUser = documentSnapshot.toObject(User.class);
+
+                        editTextEmail.getText().clear();
+                        editTextPassword.getText().clear();
 
                         Intent intent = new Intent
                                 (MainActivity.this, OverviewActivity.class);
