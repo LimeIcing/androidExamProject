@@ -62,6 +62,30 @@
                 tools:targetApi="o"
                 />
 
+            <EditText
+                android:id="@+id/editTextEmailForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/username"
+                android:inputType="textEmailAddress"
+                android:autofillHints=""
+                android:textColor="@color/colorPrimaryDark"
+                tools:targetApi="o"
+                />
+
+            <EditText
+                android:id="@+id/editTextPasswordForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:autofillHints=""
+                android:textColor="@color/colorPrimaryDark"
+                tools:targetApi="o"
+                />
+
             <Button
                 android:id="@+id/buttonSubmitApplication"
                 android:layout_width="match_parent"

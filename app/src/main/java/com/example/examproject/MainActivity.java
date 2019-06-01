@@ -10,7 +10,10 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final String TAG = "MainActivity";
+
+    // region UI
     private Button buttonSignIn, buttonNewUser;
+    // endregion
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(TAG, "onClick: new user pressed");
                 intent = new Intent(this, UserFormActivity.class);
                 startActivity(intent);
+
+                // fill in username in password
+
                 break;
         }
     }
