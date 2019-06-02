@@ -53,6 +53,11 @@ public class OverviewActivity extends AppCompatActivity implements View.OnClickL
 
             case R.id.buttonUserProfile:
                 Log.d(TAG, "onClick: user profile pressed");
+
+                intent = new Intent(this, UserProfileActivity.class);
+                intent.putExtra("user", currentUser);
+                startActivity(intent);
+
                 break;
         }
     }

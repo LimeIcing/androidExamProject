@@ -12,10 +12,12 @@ import com.example.examproject.models.Account;
 
 public class NemIDActivity extends AppCompatActivity implements View.OnClickListener {
 
-    final String TAG = "NemIDActivity";
+    private final String TAG = "NemIDActivity";
 
+    // region UI
     private TextView textViewFromAccount, textViewToAccount, textViewAmount;
     private Button buttonNext, buttonCancel;
+    // endregion
 
     private Account fromAccount;
     private double amount;

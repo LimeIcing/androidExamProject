@@ -17,7 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class NemIDCodeCardActivity extends AppCompatActivity implements View.OnClickListener {
 
-    final String TAG = "NemIDCodeCardActivity";
+    private final String TAG = "NemIDCodeCardActivity";
 
     private Button buttonNext;
 

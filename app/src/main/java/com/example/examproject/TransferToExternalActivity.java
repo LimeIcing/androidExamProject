@@ -26,7 +26,7 @@ import java.util.Map;
 
 public class TransferToExternalActivity extends AppCompatActivity implements View.OnClickListener {
 
-    final String TAG = "TToExternalActivity";
+    private final String TAG = "TToExternalActivity";
 
     // region UI
     private TextView textViewFromAccountName, textViewFromAccountBalance, textViewToAccountName;
