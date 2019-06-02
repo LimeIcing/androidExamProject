@@ -16,4 +16,6 @@
     <string name="cancel">Cancel</string>
     <string name="submit_application">Submit application</string>
     <string name="date_of_birth">Date of birth</string>
+    <string name="transfer_between_your_own_accounts">Transfer between your own accounts</string>
+    <string name="transfer_to_others">Transfer to others</string>
 </resources>

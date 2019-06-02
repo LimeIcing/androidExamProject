@@ -108,5 +108,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonNewUser.setOnClickListener(this);
         editTextEmail = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
+
+        // region DELETE THIS WHEN DONE TESTING
+        String tempUN = "f@l.me";
+        String tempPW = "pwfl1";
+        editTextEmail.setText(tempUN);
+        editTextPassword.setText(tempPW);
+        // endregion
     }
 }

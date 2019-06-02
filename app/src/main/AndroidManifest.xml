@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserFormActivity"></activity>
+        <activity android:name=".TransferActivity"></activity>
+        <activity android:name=".UserFormActivity" />
         <activity android:name=".OverviewActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

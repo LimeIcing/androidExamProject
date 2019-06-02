@@ -1,5 +1,6 @@
 package com.example.examproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,17 +31,23 @@ public class OverviewActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
+        Intent intent;
+
         switch (v.getId()) {
             case R.id.buttonManageAccounts:
                 Log.d(TAG, "onClick: manage accounts pressed");
                 break;
 
-            case R.id.buttonPayBill:
-                Log.d(TAG, "onClick: pay bill pressed");
-                break;
-
             case R.id.buttonTransferMoney:
                 Log.d(TAG, "onClick: transfer money pressed");
+
+                intent = new Intent(this, TransferActivity.class);
+                startActivity(intent);
+
+                break;
+
+            case R.id.buttonPayBill:
+                Log.d(TAG, "onClick: pay bill pressed");
                 break;
 
             case R.id.buttonUserProfile:
