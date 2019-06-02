@@ -41,6 +41,10 @@ public class TransferActivity extends AppCompatActivity implements View.OnClickL
             case R.id.buttonTransferToOthers:
                 Log.d(TAG, "onClick: transfer to others pressed");
 
+                intent = new Intent(this, TransferToExternalActivity.class);
+                intent.putExtra("accounts", accounts);
+                startActivity(intent);
+
                 break;
         }
     }

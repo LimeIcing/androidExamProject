@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TransferBetweenOwnActivity"></activity>
-        <activity android:name=".TransferActivity" />
-        <activity android:name=".UserFormActivity" />
-        <activity android:name=".OverviewActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".TransferToExternalActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".TransferBetweenOwnActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".TransferActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".UserFormActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".OverviewActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

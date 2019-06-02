@@ -21,4 +21,7 @@
     <string name="from_account">From account</string>
     <string name="to_account">To account</string>
     <string name="enter_amount">Enter amount to transfer</string>
+    <string name="registration_number">Registration number</string>
+    <string name="account_number">Account number</string>
+    <string name="confirm_recipient">Confirm recipient</string>
 </resources>
