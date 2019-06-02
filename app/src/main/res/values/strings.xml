@@ -24,4 +24,8 @@
     <string name="registration_number">Registration number</string>
     <string name="account_number">Account number</string>
     <string name="confirm_recipient">Confirm recipient</string>
+    <string name="nem_id">NEM ID</string>
+    <string name="user_id">User-id</string>
+    <string name="next">Next</string>
+    <string name="empty"> </string>
 </resources>

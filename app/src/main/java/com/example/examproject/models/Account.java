@@ -13,7 +13,7 @@ public class Account implements Parcelable {
 
     // region Parcelable
     protected Account(Parcel in) {
-        balance = in.readInt();
+        balance = in.readDouble();
         accountNumber = in.readString();
         registrationNumber = in.readString();
         owner = in.readString();
