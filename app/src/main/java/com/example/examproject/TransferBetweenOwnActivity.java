@@ -20,7 +20,6 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -43,9 +42,8 @@ public class TransferBetweenOwnActivity extends AppCompatActivity implements Vie
     // endregion
 
     private Map<String, Account> accounts = new HashMap<>();
-    private Account fromAccount;
-    private Account toAccount;
-    private Boolean isChanginFromAccount = false;
+    private Account fromAccount, toAccount;
+    private Boolean isChangingFromAccount = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,12 +62,12 @@ public class TransferBetweenOwnActivity extends AppCompatActivity implements Vie
         switch (tag) {
             case "from account":
                 scrollView.setVisibility(View.VISIBLE);
-                isChanginFromAccount = true;
+                isChangingFromAccount = true;
                 break;
 
             case "to account":
                 scrollView.setVisibility(View.VISIBLE);
-                isChanginFromAccount = false;
+                isChangingFromAccount = false;
                 break;
 
             case "transfer money":
@@ -81,7 +79,7 @@ public class TransferBetweenOwnActivity extends AppCompatActivity implements Vie
                 linearLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
 
                 try {
-                    if (isChanginFromAccount) {
+                    if (isChangingFromAccount) {
                         fromAccount = accounts.get(tag);
                         textViewFromAccountName.setText(fromAccount.getType().toString());
                         String tVFABText = "Balance: " + fromAccount.getBalance();
@@ -111,7 +109,8 @@ public class TransferBetweenOwnActivity extends AppCompatActivity implements Vie
                 FirebaseFirestore.getInstance().collection("accounts");
 
         for (String name : accountNames) {
-            collectionReference.document(name).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            collectionReference.document(name).get()
+                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                     if (documentSnapshot.exists()) {
@@ -133,9 +132,11 @@ public class TransferBetweenOwnActivity extends AppCompatActivity implements Vie
                         button.setOnClickListener(TransferBetweenOwnActivity.this);
 
                         try {
-                            String bText = account.getType() + " - balance: " + account.getBalance();
+                            String bText =
+                                    account.getType() + " - balance: " + account.getBalance();
                             button.setText(bText);
-                            String regAndAccNumber = account.getRegistrationNumber() + ":" + account.getAccountNumber();
+                            String regAndAccNumber = account.getRegistrationNumber() +
+                                    ":" + account.getAccountNumber();
                             button.setTag(regAndAccNumber);
                             linearLayout.addView(button);
 
@@ -169,7 +170,8 @@ public class TransferBetweenOwnActivity extends AppCompatActivity implements Vie
     private void transfer() {
         Log.d(TAG, "transfer: transferring money...");
 
-        final String fromAccountName = fromAccount.getOwner() + ":" + fromAccount.getAccountNumber();
+        final String fromAccountName =
+                fromAccount.getOwner() + ":" + fromAccount.getAccountNumber();
         final String toAccountName = toAccount.getOwner() + ":" + toAccount.getAccountNumber();
         WriteBatch batch = FirebaseFirestore.getInstance().batch();
         CollectionReference collectionReference =

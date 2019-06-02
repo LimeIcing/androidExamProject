@@ -39,6 +39,7 @@
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:tag="@string/from_account"
         app:layout_constraintTop_toBottomOf="@+id/textViewFromAccount"
         />
 
@@ -73,6 +74,7 @@
         android:textColor="@color/colorAccent"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:visibility="invisible"
+        android:tag="@string/to_account"
         app:layout_constraintTop_toBottomOf="@id/textViewToAccount"
         />
 
@@ -119,7 +121,7 @@
         android:textColor="@color/colorWhite"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:tag="@string/transfer_money"
+        android:tag="@string/confirm_recipient"
         app:layout_constraintTop_toBottomOf="@id/editTextAccountNumber"
         />
 
@@ -152,7 +154,30 @@
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:visibility="invisible"
+        android:tag="@string/transfer_money"
         app:layout_constraintTop_toBottomOf="@id/editTextAmountToExternal"
         />
+
+    <ScrollView
+        android:id="@+id/scrollViewTransferToExternal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewToAccount">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutTransferToExternal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:background="@color/colorPrimaryDark">
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
