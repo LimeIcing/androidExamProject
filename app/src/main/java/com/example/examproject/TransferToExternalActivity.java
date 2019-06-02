@@ -88,13 +88,13 @@ public class TransferToExternalActivity extends AppCompatActivity implements Vie
                 break;
 
             case "transfer money":
-                Log.d(TAG, "init: fromAccount: regNo: " + fromAccount.getRegistrationNumber() + ", accNo: " + fromAccount.getAccountNumber() + ", owner: " + fromAccount.getOwner());
                 Intent intent = new Intent(this, NemIDActivity.class);
                 intent.putExtra("fromAccount", fromAccount);
                 intent.putExtra("toAccount", textViewToAccountName.getText().toString());
                 intent.putExtra
                         ("amount", Double.valueOf(editTextAmount.getText().toString()));
                 startActivity(intent);
+                finish();
 
                 break;
 

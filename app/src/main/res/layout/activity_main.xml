@@ -120,5 +120,4 @@
         app:layout_constraintTop_toBottomOf="@id/buttonSignIn"
         />
 
-
 </android.support.constraint.ConstraintLayout>

@@ -27,5 +27,8 @@
     <string name="nem_id">NEM ID</string>
     <string name="user_id">User-id</string>
     <string name="next">Next</string>
+    <string name="key_card">Key card: X123"\u2014"456"\u2014"789</string>
+    <string name="key">1234</string>
+    <string name="change_password">Change Password</string>
     <string name="empty"> </string>
 </resources>

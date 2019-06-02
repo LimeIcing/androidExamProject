@@ -58,7 +58,6 @@ public class NemIDActivity extends AppCompatActivity implements View.OnClickList
         Bundle extras = getIntent().getExtras();
 
         fromAccount = extras.getParcelable("fromAccount");
-        Log.d(TAG, "init: fromAccount: regNo: " + fromAccount.getRegistrationNumber() + ", accNo: " + fromAccount.getAccountNumber() + ", owner: " + fromAccount.getOwner());
         String toAccount = extras.getString("toAccount");
         amount = extras.getDouble("amount");
 
