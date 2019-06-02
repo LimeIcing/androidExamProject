@@ -90,6 +90,39 @@
         app:layout_constraintTop_toBottomOf="@id/textViewToAccountName"
         />
 
+    <EditText
+        android:id="@+id/editTextAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginTop="64dp"
+        android:hint="@string/enter_amount"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:background="@color/colorWhite"
+        android:autofillHints=""
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/textViewToAccountBalance"
+        tools:targetApi="o"
+        />
+
+    <Button
+        android:id="@+id/buttonTransferMoneyToOwn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/transfer_money"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="invisible"
+        android:tag="@string/transfer_money"
+        app:layout_constraintTop_toBottomOf="@id/editTextAmount"
+        />
+
     <ScrollView
         android:id="@+id/scrollViewTransferBetweenOwn"
         android:layout_width="0dp"

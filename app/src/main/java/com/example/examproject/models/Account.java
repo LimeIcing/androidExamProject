@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Account implements Parcelable {
-    private int balance;
+    private double balance;
     private AccountType type;
     private String accountNumber, registrationNumber, owner;
 
@@ -21,7 +21,7 @@ public class Account implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(balance);
+        dest.writeDouble(balance);
         dest.writeString(accountNumber);
         dest.writeString(registrationNumber);
         dest.writeString(owner);
@@ -46,7 +46,7 @@ public class Account implements Parcelable {
     // endregion
 
     // region getters
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
