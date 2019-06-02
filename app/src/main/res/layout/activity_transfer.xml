@@ -8,7 +8,7 @@
     tools:context=".TransferActivity">
 
     <ScrollView
-        android:id="@+id/scrollViewOverview"
+        android:id="@+id/scrollViewTransfer"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="128dp"
-            android:paddingBottom="128dp"
+            android:paddingBottom="64dp"
             android:text="@string/transfer_money"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"

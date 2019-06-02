@@ -42,6 +42,7 @@ public class OverviewActivity extends AppCompatActivity implements View.OnClickL
                 Log.d(TAG, "onClick: transfer money pressed");
 
                 intent = new Intent(this, TransferActivity.class);
+                intent.putExtra("accounts", currentUser.getAccounts().toArray(new String[0]));
                 startActivity(intent);
 
                 break;

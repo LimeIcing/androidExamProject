@@ -12,6 +12,7 @@ public class User implements Parcelable {
     public User() {
     }
 
+    // region Parcelable
     protected User(Parcel in) {
         email = in.readString();
         firstName = in.readString();
@@ -45,6 +46,7 @@ public class User implements Parcelable {
             return new User[size];
         }
     };
+    // endregion
 
     // region getters
     public String getEmail() {
