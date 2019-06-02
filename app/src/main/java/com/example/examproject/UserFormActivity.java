@@ -59,8 +59,13 @@ public class UserFormActivity extends AppCompatActivity implements View.OnClickL
                         dateSetListener,
                         year, month, day);
 
-                dialog.getWindow().setBackgroundDrawable
-                        (new ColorDrawable(getResources().getColor(R.color.colorWhite)));
+                try {
+                    dialog.getWindow().setBackgroundDrawable
+                            (new ColorDrawable(getResources().getColor(R.color.colorWhite)));
+                } catch (NullPointerException eNP) {
+                    eNP.printStackTrace();
+                }
+
                 dialog.show();
 
                 break;
