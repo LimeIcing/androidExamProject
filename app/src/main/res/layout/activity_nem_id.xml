@@ -14,11 +14,11 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:background="@color/colorWhite"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/imageViewNemID"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
         />
 
     <ImageView
-        android:id="@+id/imageViewNemID"
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="64dp"
         android:src="@drawable/nem_id_logo"
@@ -36,50 +36,50 @@
         />
 
     <TextView
-        android:id="@+id/textViewNemIDFromAccount"
+        android:id="@+id/textViewFromAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="@string/from_account"
-        app:layout_constraintStart_toStartOf="@+id/editTextNemIDUserID"
+        app:layout_constraintStart_toStartOf="@+id/editTextUserID"
         app:layout_constraintTop_toTopOf="@+id/dividerTop"
         />
 
     <TextView
-        android:id="@+id/textViewNemIDToAccount"
+        android:id="@+id/textViewToAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="@string/to_account"
-        app:layout_constraintStart_toStartOf="@+id/editTextNemIDUserID"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNemIDFromAccount"
+        app:layout_constraintStart_toStartOf="@+id/editTextUserID"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFromAccount"
         />
 
     <TextView
-        android:id="@+id/textViewNemIDAmount"
+        android:id="@+id/textViewAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="@string/enter_amount"
-        app:layout_constraintStart_toStartOf="@+id/editTextNemIDUserID"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNemIDToAccount"
+        app:layout_constraintStart_toStartOf="@+id/editTextUserID"
+        app:layout_constraintTop_toBottomOf="@+id/textViewToAccount"
         />
 
     <TextView
-        android:id="@+id/textViewNemIDUserID"
+        android:id="@+id/textViewUserID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="@string/user_id"
-        app:layout_constraintStart_toStartOf="@+id/editTextNemIDUserID"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNemIDUserID"
+        app:layout_constraintStart_toStartOf="@+id/editTextUserID"
+        app:layout_constraintBottom_toTopOf="@+id/editTextUserID"
         />
 
     <EditText
-        android:id="@+id/editTextNemIDUserID"
+        android:id="@+id/editTextUserID"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -89,19 +89,19 @@
         android:hint="@string/empty"
         android:autofillHints=""
         tools:targetApi="o"
-        app:layout_constraintStart_toStartOf="@id/editTextNemIDPassword"
-        app:layout_constraintEnd_toEndOf="@id/editTextNemIDPassword"
-        app:layout_constraintBottom_toTopOf="@id/textViewNemIDPassword"
+        app:layout_constraintStart_toStartOf="@id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="@id/editTextPassword"
+        app:layout_constraintBottom_toTopOf="@id/textViewPassword"
         />
 
     <TextView
-        android:id="@+id/textViewNemIDPassword"
+        android:id="@+id/textViewPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="@string/password"
-        app:layout_constraintStart_toStartOf="@+id/editTextNemIDPassword"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNemIDPassword"
+        app:layout_constraintStart_toStartOf="@+id/editTextPassword"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
         />
 
     <View
@@ -117,7 +117,7 @@
         />
 
     <EditText
-        android:id="@+id/editTextNemIDPassword"
+        android:id="@+id/editTextPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -134,7 +134,7 @@
         />
 
     <Button
-        android:id="@+id/buttonNemIDNext"
+        android:id="@+id/buttonNext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -144,21 +144,21 @@
         android:textColor="@color/colorNemIDLight"
         android:backgroundTint="@color/colorNemIDDark"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/buttonNemIDCancel"
+        app:layout_constraintEnd_toStartOf="@id/buttonCancel"
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
     <Button
-        android:id="@+id/buttonNemIDCancel"
+        android:id="@+id/buttonCancel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/cancel"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/colorNemIDLight"
         android:backgroundTint="@color/colorNemIDDark"
-        app:layout_constraintStart_toEndOf="@id/buttonNemIDNext"
-        app:layout_constraintEnd_toEndOf="@id/editTextNemIDPassword"
-        app:layout_constraintBottom_toBottomOf="@id/buttonNemIDNext"
+        app:layout_constraintStart_toEndOf="@id/buttonNext"
+        app:layout_constraintEnd_toEndOf="@id/editTextPassword"
+        app:layout_constraintBottom_toBottomOf="@id/buttonNext"
         />
 
 </android.support.constraint.ConstraintLayout>

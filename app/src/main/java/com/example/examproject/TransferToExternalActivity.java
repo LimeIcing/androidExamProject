@@ -217,13 +217,13 @@ public class TransferToExternalActivity extends AppCompatActivity implements Vie
         textViewToAccountName.setOnClickListener(this);
         editTextRegistrationNumber = findViewById(R.id.editTextRegistrationNumber);
         editTextAccountNumber = findViewById(R.id.editTextAccountNumber);
-        editTextAmount = findViewById(R.id.editTextAmountToExternal);
-        buttonConfirmRecipient = findViewById(R.id.buttonConfirmRecipient);
+        editTextAmount = findViewById(R.id.editTextAmount);
+        buttonConfirmRecipient = findViewById(R.id.buttonConfirm);
         buttonConfirmRecipient.setOnClickListener(this);
-        buttonTransfer = findViewById(R.id.buttonTransferMoneyToExternal);
+        buttonTransfer = findViewById(R.id.buttonTransfer);
         buttonTransfer.setOnClickListener(this);
-        scrollView = findViewById(R.id.scrollViewTransferToExternal);
-        linearLayout = findViewById(R.id.linearLayoutTransferToExternal);
+        scrollView = findViewById(R.id.scrollView);
+        linearLayout = findViewById(R.id.linearLayout);
 
         fetchAccounts(getIntent().getStringArrayExtra("accounts"));
     }

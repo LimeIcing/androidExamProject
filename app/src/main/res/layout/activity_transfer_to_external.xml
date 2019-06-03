@@ -8,7 +8,7 @@
     tools:context=".TransferToExternalActivity">
 
     <TextView
-        android:id="@+id/textViewTransferToExternalAccount"
+        android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="64dp"
@@ -28,7 +28,7 @@
         android:text="@string/from_account"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintTop_toBottomOf="@id/textViewTransferToExternalAccount"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
         />
 
     <TextView
@@ -112,7 +112,7 @@
         />
 
     <Button
-        android:id="@+id/buttonConfirmRecipient"
+        android:id="@+id/buttonConfirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
@@ -126,7 +126,7 @@
         />
 
     <EditText
-        android:id="@+id/editTextAmountToExternal"
+        android:id="@+id/editTextAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
@@ -144,7 +144,7 @@
         />
 
     <Button
-        android:id="@+id/buttonTransferMoneyToExternal"
+        android:id="@+id/buttonTransfer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
@@ -155,11 +155,11 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:visibility="invisible"
         android:tag="@string/transfer_money"
-        app:layout_constraintTop_toBottomOf="@id/editTextAmountToExternal"
+        app:layout_constraintTop_toBottomOf="@id/editTextAmount"
         />
 
     <ScrollView
-        android:id="@+id/scrollViewTransferToExternal"
+        android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="invisible"
@@ -169,7 +169,7 @@
         app:layout_constraintTop_toBottomOf="@id/textViewToAccount">
 
         <LinearLayout
-            android:id="@+id/linearLayoutTransferToExternal"
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"

@@ -7,7 +7,7 @@
     tools:context=".PayBillActivity">
 
     <TextView
-        android:id="@+id/textViewTransferToExternalAccount"
+        android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="64dp"
@@ -27,7 +27,7 @@
         android:text="@string/from_account"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintTop_toBottomOf="@id/textViewTransferToExternalAccount"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
         />
 
     <TextView
@@ -54,7 +54,7 @@
         />
 
     <ScrollView
-        android:id="@+id/scrollViewTransferToExternal"
+        android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="64dp"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@id/textViewFromAccountBalance">
 
         <LinearLayout
-            android:id="@+id/linearLayoutTransferToExternal"
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"

@@ -213,10 +213,10 @@ public class TransferBetweenOwnActivity extends AppCompatActivity implements Vie
         textViewToAccountName = findViewById(R.id.textViewToAccountName);
         textViewToAccountName.setOnClickListener(this);
         textViewToAccountBalance = findViewById(R.id.textViewToAccountBalance);
-        scrollView = findViewById(R.id.scrollViewTransferBetweenOwn);
-        linearLayout = findViewById(R.id.linearLayoutTransferBetweenOwn);
+        scrollView = findViewById(R.id.scrollView);
+        linearLayout = findViewById(R.id.linearLayout);
         editTextAmount = findViewById(R.id.editTextAmount);
-        buttonTransfer = findViewById(R.id.buttonTransferMoneyToOwn);
+        buttonTransfer = findViewById(R.id.buttonTransfer);
         buttonTransfer.setOnClickListener(this);
 
         fetchAccounts(getIntent().getStringArrayExtra("accounts"));

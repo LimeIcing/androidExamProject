@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonSignIn.setOnClickListener(this);
         buttonNewUser = findViewById(R.id.buttonNewUser);
         buttonNewUser.setOnClickListener(this);
-        editTextEmail = findViewById(R.id.editTextUsername);
+        editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
 
         // region DELETE THIS WHEN DONE TESTING

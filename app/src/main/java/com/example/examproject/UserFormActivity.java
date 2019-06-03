@@ -78,7 +78,7 @@ public class UserFormActivity extends AppCompatActivity implements View.OnClickL
 
                 break;
 
-            case R.id.buttonSubmitApplication:
+            case R.id.buttonSubmit:
                 Log.d(TAG, "onClick: Submit pressed");
                 Toast.makeText(this, "Communicating with server...", Toast.LENGTH_LONG)
                         .show();
@@ -87,7 +87,7 @@ public class UserFormActivity extends AppCompatActivity implements View.OnClickL
 
                 break;
 
-            case R.id.buttonCancelUserForm:
+            case R.id.buttonCancel:
                 Log.d(TAG, "onClick: Cancel pressed");
 
                 finish();
@@ -211,11 +211,11 @@ public class UserFormActivity extends AppCompatActivity implements View.OnClickL
         editTextLastName = findViewById(R.id.editTextLastName);
         textViewDateOfBirth = findViewById(R.id.textViewDateOfBirth);
         textViewDateOfBirth.setOnClickListener(this);
-        editTextEmail = findViewById(R.id.editTextEmailForm);
-        editTextPassword = findViewById(R.id.editTextPasswordForm);
-        buttonSubmit = findViewById(R.id.buttonSubmitApplication);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
+        buttonSubmit = findViewById(R.id.buttonSubmit);
         buttonSubmit.setOnClickListener(this);
-        buttonCancel = findViewById(R.id.buttonCancelUserForm);
+        buttonCancel = findViewById(R.id.buttonCancel);
         buttonCancel.setOnClickListener(this);
 
         dateSetListener = new DatePickerDialog.OnDateSetListener() {

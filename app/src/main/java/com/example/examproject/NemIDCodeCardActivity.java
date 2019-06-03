@@ -63,7 +63,7 @@ public class NemIDCodeCardActivity extends AppCompatActivity implements View.OnC
         Bundle extras = getIntent().getExtras();
         account = extras.getParcelable("account");
         amount = extras.getDouble("amount");
-        buttonNext = findViewById(R.id.buttonNemIDNext);
+        buttonNext = findViewById(R.id.buttonNext);
         buttonNext.setOnClickListener(this);
     }
 }

@@ -63,7 +63,7 @@
                 />
 
             <EditText
-                android:id="@+id/editTextEmailForm"
+                android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -75,7 +75,7 @@
                 />
 
             <EditText
-                android:id="@+id/editTextPasswordForm"
+                android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -87,7 +87,7 @@
                 />
 
             <Button
-                android:id="@+id/buttonSubmitApplication"
+                android:id="@+id/buttonSubmit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -100,7 +100,7 @@
                 />
 
             <Button
-                android:id="@+id/buttonCancelUserForm"
+                android:id="@+id/buttonCancel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"

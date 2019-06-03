@@ -33,7 +33,7 @@ public class NemIDActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.buttonNemIDNext:
+            case R.id.buttonNext:
                 Log.d(TAG, "onClick: next pressed");
 
                 Intent intent = new Intent(this, NemIDCodeCardActivity.class);
@@ -44,7 +44,7 @@ public class NemIDActivity extends AppCompatActivity implements View.OnClickList
 
                 break;
 
-            case R.id.buttonNemIDCancel:
+            case R.id.buttonCancel:
                 Log.d(TAG, "onClick: cancel pressed");
 
                 finish();
@@ -62,22 +62,22 @@ public class NemIDActivity extends AppCompatActivity implements View.OnClickList
         String toAccount = extras.getString("toAccount");
         amount = extras.getDouble("amount");
 
-        textViewFromAccount = findViewById(R.id.textViewNemIDFromAccount);
+        textViewFromAccount = findViewById(R.id.textViewFromAccount);
         String textViewText = "From account: " + fromAccount.getRegistrationNumber()
                 + " " + fromAccount.getAccountNumber();
         textViewFromAccount.setText(textViewText);
 
-        textViewToAccount = findViewById(R.id.textViewNemIDToAccount);
+        textViewToAccount = findViewById(R.id.textViewToAccount);
         textViewText = "To account: " + toAccount;
         textViewToAccount.setText(textViewText);
 
-        textViewAmount = findViewById(R.id.textViewNemIDAmount);
+        textViewAmount = findViewById(R.id.textViewAmount);
         textViewText = "Amount to be transferred: " + amount;
         textViewAmount.setText(textViewText);
 
-        buttonNext = findViewById(R.id.buttonNemIDNext);
+        buttonNext = findViewById(R.id.buttonNext);
         buttonNext.setOnClickListener(this);
-        buttonCancel = findViewById(R.id.buttonNemIDCancel);
+        buttonCancel = findViewById(R.id.buttonCancel);
         buttonCancel.setOnClickListener(this);
     }
 }

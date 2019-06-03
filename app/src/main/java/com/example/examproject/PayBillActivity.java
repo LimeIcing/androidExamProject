@@ -159,8 +159,8 @@ public class PayBillActivity extends AppCompatActivity implements View.OnClickLi
         textViewFromAccountName = findViewById(R.id.textViewFromAccountName);
         textViewFromAccountName.setOnClickListener(this);
         textViewFromAccountBalance = findViewById(R.id.textViewFromAccountBalance);
-        scrollView = findViewById(R.id.scrollViewTransferToExternal);
-        linearLayout = findViewById(R.id.linearLayoutTransferToExternal);
+        scrollView = findViewById(R.id.scrollView);
+        linearLayout = findViewById(R.id.linearLayout);
 
         fetchAccounts(getIntent().getStringArrayExtra("accounts"));
     }
