@@ -164,7 +164,6 @@ public class UserFormActivity extends AppCompatActivity implements View.OnClickL
                 }
             }
         });
-
     }
 
     public void createAccount(final AccountType accountType, String numberString) {

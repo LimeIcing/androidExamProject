@@ -136,7 +136,8 @@ public class TransferToExternalActivity extends AppCompatActivity implements Vie
                 FirebaseFirestore.getInstance().collection("accounts");
 
         for (String name : accountNames) {
-            collectionReference.document(name).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            collectionReference.document(name).get()
+                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                     if (documentSnapshot.exists()) {
@@ -145,7 +146,8 @@ public class TransferToExternalActivity extends AppCompatActivity implements Vie
                         Account account = documentSnapshot.toObject(Account.class);
 
                         try {
-                            String regAndAccNumber = account.getRegistrationNumber() + ":" + account.getAccountNumber();
+                            String regAndAccNumber = account.getRegistrationNumber()
+                                    + ":" + account.getAccountNumber();
                             accounts.put(regAndAccNumber, account);
 
                             if (account.getType().equals(AccountType.DEFAULT)) {
@@ -167,7 +169,7 @@ public class TransferToExternalActivity extends AppCompatActivity implements Vie
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Log.d(TAG, "onFailure: something went wrong, " + e.toString());
+                    Log.d(TAG, "onFailure: something went wrong, ", e);
                 }
             });
         }

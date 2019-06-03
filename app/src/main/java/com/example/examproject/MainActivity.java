@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Log.d(TAG, "onFailure: something went wrong, " + e.toString());
+                Log.d(TAG, "onFailure: something went wrong, ", e);
             }
         });
     }

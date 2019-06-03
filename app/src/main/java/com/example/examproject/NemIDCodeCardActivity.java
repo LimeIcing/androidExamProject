@@ -36,6 +36,7 @@ public class NemIDCodeCardActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         DocumentReference documentReference = FirebaseFirestore.getInstance().document
                 ("accounts/" + account.getOwner() + ":" + account.getAccountNumber());
+
         documentReference.update("balance", FieldValue.increment(-amount))
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -47,7 +48,7 @@ public class NemIDCodeCardActivity extends AppCompatActivity implements View.OnC
                             "Transaction complete", Toast.LENGTH_LONG).show();
                     finish();
                 } else {
-                    Log.d(TAG, "onComplete: something went wrong: " + task.getException());
+                    Log.d(TAG, "onComplete: something went wrong: ", task.getException());
 
                     Toast.makeText(NemIDCodeCardActivity.this,
                             "Something went wrong", Toast.LENGTH_LONG).show();

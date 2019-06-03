@@ -160,7 +160,7 @@ public class TransferBetweenOwnActivity extends AppCompatActivity implements Vie
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Log.d(TAG, "onFailure: something went wrong, " + e.toString());
+                    Log.d(TAG, "onFailure: something went wrong, ", e);
                 }
             });
         }
