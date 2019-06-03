@@ -51,6 +51,7 @@ public class OverviewActivity extends AppCompatActivity implements View.OnClickL
                 Log.d(TAG, "onClick: pay bill pressed");
 
                 intent = new Intent(this, PayBillActivity.class);
+                intent.putExtra("accounts", currentUser.getAccounts().toArray(new String[0]));
                 startActivity(intent);
 
                 break;

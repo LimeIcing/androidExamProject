@@ -6,4 +6,74 @@
     android:layout_height="match_parent"
     tools:context=".PayBillActivity">
 
+    <TextView
+        android:id="@+id/textViewTransferToExternalAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="64dp"
+        android:paddingBottom="32dp"
+        android:layout_margin="8dp"
+        android:text="@string/pay_bill"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/textViewFromAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/from_account"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintTop_toBottomOf="@id/textViewTransferToExternalAccount"
+        />
+
+    <TextView
+        android:id="@+id/textViewFromAccountName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/transfer_to_others"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:tag="@string/from_account"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFromAccount"
+        />
+
+    <TextView
+        android:id="@+id/textViewFromAccountBalance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/transfer_to_others"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintTop_toBottomOf="@id/textViewFromAccountName"
+        />
+
+    <ScrollView
+        android:id="@+id/scrollViewTransferToExternal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="64dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewFromAccountBalance">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutTransferToExternal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:background="@color/colorPrimaryLight">
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
