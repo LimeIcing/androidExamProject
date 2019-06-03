@@ -20,6 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final String TAG = "MainActivity";
+    private final String EMAIL = "email";
 
     // region UI
     private Button buttonSignIn, buttonNewUser;
@@ -32,6 +33,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: called");
         init();
+
+        if (savedInstanceState != null) {
+            editTextEmail.setText(savedInstanceState.getString(EMAIL));
+        }
     }
 
     @Override
@@ -58,6 +63,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(TAG, "onSaveInstanceState: called");
+
+        outState.putString(EMAIL, editTextEmail.getText().toString());
     }
 
     private void checkUser() {

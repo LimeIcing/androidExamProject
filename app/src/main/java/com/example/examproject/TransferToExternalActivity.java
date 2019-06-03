@@ -27,6 +27,8 @@ import java.util.Map;
 public class TransferToExternalActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final String TAG = "TToExternalActivity";
+    private final String REGISTRATION_NUMBER = "registrationNumber";
+    private final String ACCOUNT_NUMBER = "accountNumber";
 
     // region UI
     private TextView textViewFromAccountName, textViewFromAccountBalance, textViewToAccountName;
@@ -45,8 +47,12 @@ public class TransferToExternalActivity extends AppCompatActivity implements Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transfer_to_external);
         Log.d(TAG, "onCreate: called");
-
         init();
+
+        if (savedInstanceState != null) {
+            editTextRegistrationNumber.setText(savedInstanceState.getString(REGISTRATION_NUMBER));
+            editTextAccountNumber.setText(savedInstanceState.getString(ACCOUNT_NUMBER));
+        }
     }
 
     @Override
@@ -112,6 +118,15 @@ public class TransferToExternalActivity extends AppCompatActivity implements Vie
 
                 break;
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(TAG, "onSaveInstanceState: called");
+
+        outState.putString(REGISTRATION_NUMBER, editTextRegistrationNumber.getText().toString());
+        outState.putString(ACCOUNT_NUMBER, editTextAccountNumber.getText().toString());
     }
 
     private void fetchAccounts(final String[] accountNames) {

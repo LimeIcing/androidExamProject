@@ -20,7 +20,6 @@ public class TransferActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transfer);
         Log.d(TAG, "onCreate: called");
-
         init();
     }
 

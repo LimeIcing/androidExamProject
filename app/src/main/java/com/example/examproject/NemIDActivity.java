@@ -27,7 +27,6 @@ public class NemIDActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nem_id);
         Log.d(TAG, "onCreate: called");
-
         init();
     }
 

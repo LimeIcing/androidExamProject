@@ -28,6 +28,9 @@ import java.util.Map;
 public class UserFormActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final String TAG = "UserFormActivity";
+    private final String FIRST_NAME = "firstName";
+    private final String LAST_NAME = "lastName";
+    private final String EMAIL = "email";
 
     // region UI
     private EditText editTextFirstName, editTextLastName, editTextEmail, editTextPassword;
@@ -41,8 +44,13 @@ public class UserFormActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_form);
         Log.d(TAG, "onCreate: called");
-
         init();
+
+        if (savedInstanceState != null) {
+            editTextFirstName.setText(savedInstanceState.getString(FIRST_NAME));
+            editTextLastName.setText(savedInstanceState.getString(LAST_NAME));
+            editTextEmail.setText(savedInstanceState.getString(EMAIL));
+        }
     }
 
     @Override
@@ -85,6 +93,16 @@ public class UserFormActivity extends AppCompatActivity implements View.OnClickL
                 finish();
                 break;
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(TAG, "onSaveInstanceState: called");
+
+        outState.putString(FIRST_NAME, editTextFirstName.getText().toString());
+        outState.putString(LAST_NAME, editTextLastName.getText().toString());
+        outState.putString(EMAIL, editTextEmail.getText().toString());
     }
 
     private void saveToFirestore() {

@@ -50,7 +50,6 @@ public class TransferBetweenOwnActivity extends AppCompatActivity implements Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transfer_between_own);
         Log.d(TAG, "onCreate: called");
-
         init();
     }
 

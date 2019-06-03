@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.examproject.models.Account;
 import com.example.examproject.models.User;
 
 public class ChangePasswordActivity extends AppCompatActivity implements View.OnClickListener {
@@ -26,13 +25,12 @@ public class ChangePasswordActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
         Log.d(TAG, "onCreate: called");
-
         init();
     }
 
     @Override
     public void onClick(View v) {
-        
+
     }
 
     private void init() {
