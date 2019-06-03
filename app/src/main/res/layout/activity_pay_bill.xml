@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PayBillActivity">
@@ -51,6 +52,113 @@
         android:textColor="@color/colorPrimaryDark"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintTop_toBottomOf="@id/textViewFromAccountName"
+        />
+
+    <TextView
+        android:id="@+id/textViewBillType"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/bill_type"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewFromAccountBalance"
+        app:layout_constraintBottom_toBottomOf="@id/editTextPaymentID"
+        />
+
+    <EditText
+        android:id="@+id/editTextPaymentID"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:hint="@string/payment_id"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:background="@color/colorWhite"
+        android:autofillHints=""
+        app:layout_constraintStart_toEndOf="@id/textViewBillType"
+        app:layout_constraintEnd_toStartOf="@id/textViewPlus"
+        app:layout_constraintTop_toTopOf="@id/textViewBillType"
+        tools:targetApi="o"
+        />
+
+    <TextView
+        android:id="@+id/textViewPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:paddingTop="8dp"
+        android:text="@string/plus"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toEndOf="@id/editTextPaymentID"
+        app:layout_constraintEnd_toStartOf="@id/editTextCreditorNumber"
+        app:layout_constraintTop_toTopOf="@id/editTextPaymentID"
+        app:layout_constraintBottom_toBottomOf="@id/editTextPaymentID"
+        />
+
+    <EditText
+        android:id="@+id/editTextCreditorNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:hint="@string/creditor_number"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:background="@color/colorWhite"
+        android:autofillHints=""
+        app:layout_constraintStart_toEndOf="@id/textViewPlus"
+        app:layout_constraintEnd_toStartOf="@id/textViewLessThan"
+        app:layout_constraintTop_toTopOf="@id/editTextPaymentID"
+        tools:targetApi="o"
+        />
+
+    <TextView
+        android:id="@+id/textViewLessThan"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="8dp"
+        android:text="@string/less_than"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toEndOf="@id/editTextCreditorNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextPaymentID"
+        app:layout_constraintBottom_toBottomOf="@id/editTextPaymentID"
+        />
+
+    <EditText
+        android:id="@+id/editTextAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:hint="@string/enter_amount_transfer"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:background="@color/colorWhite"
+        android:autofillHints=""
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/editTextCreditorNumber"
+        tools:targetApi="o"
+        />
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/next"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:tag="@string/next"
+        app:layout_constraintTop_toBottomOf="@id/editTextCreditorNumber"
         />
 
     <ScrollView

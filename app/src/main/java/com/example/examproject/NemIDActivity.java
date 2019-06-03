@@ -63,16 +63,16 @@ public class NemIDActivity extends AppCompatActivity implements View.OnClickList
         amount = extras.getDouble("amount");
 
         textViewFromAccount = findViewById(R.id.textViewFromAccount);
-        String textViewText = "From account: " + fromAccount.getRegistrationNumber()
+        String textViewText = "From:\n" + fromAccount.getRegistrationNumber()
                 + " " + fromAccount.getAccountNumber();
         textViewFromAccount.setText(textViewText);
 
         textViewToAccount = findViewById(R.id.textViewToAccount);
-        textViewText = "To account: " + toAccount;
+        textViewText = "To:\n" + toAccount;
         textViewToAccount.setText(textViewText);
 
         textViewAmount = findViewById(R.id.textViewAmount);
-        textViewText = "Amount to be transferred: " + amount;
+        textViewText = "Amount to be transferred:\n" + amount;
         textViewAmount.setText(textViewText);
 
         buttonNext = findViewById(R.id.buttonNext);

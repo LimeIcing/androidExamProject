@@ -1,12 +1,17 @@
 package com.example.examproject;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
+import android.support.constraint.ConstraintSet;
+import android.support.constraint.Constraints;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -27,7 +32,10 @@ public class PayBillActivity extends AppCompatActivity implements View.OnClickLi
     private final String TAG = "PayBillActivity";
 
     // region UI
+    private ConstraintLayout parentLayout;
     private TextView textViewFromAccountName, textViewFromAccountBalance;
+    private EditText editTextPaymentID, editTextCreditorNumber, editTextAmount;
+    private Button buttonNext;
     private ScrollView scrollView;
     private LinearLayout linearLayout;
     // endregion
@@ -55,12 +63,40 @@ public class PayBillActivity extends AppCompatActivity implements View.OnClickLi
                     buildAccountList();
                 }
 
+                buttonNext.setVisibility(View.INVISIBLE);
                 scrollView.setVisibility(View.VISIBLE);
+
+                break;
+
+            case "next":
+                ConstraintSet constraints = new ConstraintSet();
+                constraints.clone(parentLayout);
+                constraints.connect(R.id.buttonNext, ConstraintSet.TOP,
+                        R.id.editTextAmount, ConstraintSet.BOTTOM);
+                constraints.applyTo(parentLayout);
+                editTextAmount.setVisibility(View.VISIBLE);
+                String payBill = getResources().getString(R.string.pay_bill);
+                buttonNext.setTag(payBill);
+                buttonNext.setText(payBill);
+
+                break;
+
+            case "pay bill":
+                Intent intent = new Intent(this, NemIDActivity.class);
+                intent.putExtra("fromAccount", fromAccount);
+                String recipient = "+75< " + editTextPaymentID.getText()
+                        + " + " + editTextCreditorNumber.getText() + " <";
+                intent.putExtra("toAccount", recipient);
+                intent.putExtra
+                        ("amount", Double.valueOf(editTextAmount.getText().toString()));
+                startActivity(intent);
+                finish();
 
                 break;
 
             default:
                 scrollView.setVisibility(View.INVISIBLE);
+                buttonNext.setVisibility(View.VISIBLE);
 
                 try {
                     fromAccount = accounts.get(tag);
@@ -156,9 +192,15 @@ public class PayBillActivity extends AppCompatActivity implements View.OnClickLi
     private void init() {
         Log.d(TAG, "initializing...");
 
+        parentLayout = findViewById(R.id.parentLayout);
         textViewFromAccountName = findViewById(R.id.textViewFromAccountName);
         textViewFromAccountName.setOnClickListener(this);
         textViewFromAccountBalance = findViewById(R.id.textViewFromAccountBalance);
+        editTextPaymentID = findViewById(R.id.editTextPaymentID);
+        editTextCreditorNumber = findViewById(R.id.editTextCreditorNumber);
+        editTextAmount = findViewById(R.id.editTextAmount);
+        buttonNext = findViewById(R.id.buttonNext);
+        buttonNext.setOnClickListener(this);
         scrollView = findViewById(R.id.scrollView);
         linearLayout = findViewById(R.id.linearLayout);
 

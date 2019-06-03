@@ -20,7 +20,7 @@
     <string name="transfer_to_others">Transfer to others</string>
     <string name="from_account">From account</string>
     <string name="to_account">To account</string>
-    <string name="enter_amount">Enter amount to transfer</string>
+    <string name="enter_amount_transfer">Enter amount to transfer</string>
     <string name="registration_number">Registration number</string>
     <string name="account_number">Account number</string>
     <string name="confirm_recipient">Confirm recipient</string>
@@ -32,5 +32,11 @@
     <string name="change_password">Change Password</string>
     <string name="old_password">Old password</string>
     <string name="new_password">New password</string>
+    <string name="bill_type">+75 &#32; &lt;</string>
+    <string name="payment_id">Payment ID</string>
+    <string name="plus">+</string>
+    <string name="creditor_number">Creditor number</string>
+    <string name="less_than">&lt;</string>
+    <string name="enter_amount_pay">Enter amount to pay</string>
     <string name="empty"> </string>
 </resources>
