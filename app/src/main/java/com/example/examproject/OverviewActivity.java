@@ -49,6 +49,10 @@ public class OverviewActivity extends AppCompatActivity implements View.OnClickL
 
             case R.id.buttonPayBill:
                 Log.d(TAG, "onClick: pay bill pressed");
+
+                intent = new Intent(this, PayBillActivity.class);
+                startActivity(intent);
+
                 break;
 
             case R.id.buttonUserProfile:
